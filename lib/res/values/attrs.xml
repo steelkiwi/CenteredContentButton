@@ -6,6 +6,7 @@
         <attr name="btnIcon" format="integer" />
         <attr name="btnText" format="string" />
         <attr name="btnTextStyle" format="integer" />
+        <attr name="btnChecked" format="boolean" />
     </declare-styleable>
 
 </resources>
