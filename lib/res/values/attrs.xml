@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <declare-styleable name="BtnOptions">
+        <attr name="btnBg" format="integer" />
+        <attr name="btnIcon" format="integer" />
+        <attr name="btnText" format="string" />
+        <attr name="btnTextStyle" format="integer" />
+    </declare-styleable>
+
+</resources>
