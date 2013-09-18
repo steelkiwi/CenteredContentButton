@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.widget.Checkable;
 
 /**
- * Based on https://gist.github.com/christopherperry/3746480
+ * Based on https://gist.github.com/christopherperry/3746480 and CompoundButton source code
  */
 
 public class CenteredContentToggleButton extends CenteredContentButton implements Checkable {
@@ -18,6 +18,9 @@ public class CenteredContentToggleButton extends CenteredContentButton implement
     };
 	
 	private boolean checked = false;
+	private boolean broadcasting = false;
+	
+	private OnCheckedChangeListener onCheckedChangeListener;
 	
 	public CenteredContentToggleButton(Context context) {
 		super(context);
@@ -52,8 +55,20 @@ public class CenteredContentToggleButton extends CenteredContentButton implement
 	@Override
 	public void setChecked(boolean checked) {
 		if (this.checked == checked) { return; }
+		
 		this.checked = checked;
 		refreshDrawableState();
+		
+		//avoid infinite recursions if setChecked() is called from a listener
+		if (broadcasting) {
+			return;
+		}
+		
+		broadcasting = true;
+		if (onCheckedChangeListener != null) {
+			onCheckedChangeListener.onCheckedChanged(this);
+		}
+		broadcasting = false;
 	}
 
 	@Override
@@ -66,6 +81,14 @@ public class CenteredContentToggleButton extends CenteredContentButton implement
         toggle();
         return super.performClick();
     }
+	
+	public void setOnCheckedChangeListener(OnCheckedChangeListener onCheckedChangeListener) {
+		this.onCheckedChangeListener = onCheckedChangeListener;
+	}
+	
+	public interface OnCheckedChangeListener {
+		public void onCheckedChanged(CenteredContentToggleButton btn);
+	}
 	
 	@Override
     protected int[] onCreateDrawableState(int extraSpace) {
@@ -87,8 +110,6 @@ public class CenteredContentToggleButton extends CenteredContentButton implement
             invalidate();
         }
     }
-    
-    //State persistency
     
     static class SavedState extends BaseSavedState {
         boolean checked;
