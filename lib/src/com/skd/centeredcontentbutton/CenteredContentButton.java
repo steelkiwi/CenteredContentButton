@@ -2,9 +2,11 @@ package com.skd.centeredcontentbutton;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -53,6 +55,9 @@ public class CenteredContentButton extends RelativeLayout {
         if (btnIcon > 0) {
         	icon.setImageResource(btnIcon);
         }
+        else {
+        	icon.setVisibility(View.GONE);
+        }
         
         text.setText(btnText);
         if (btnTextStyle > 0) {
@@ -62,5 +67,27 @@ public class CenteredContentButton extends RelativeLayout {
 	
 	public String getText() {
 		return text.getText().toString();
+	}
+	
+	public void setText(String txt) {
+		text.setText(txt);
+	}
+	
+	public void setTypeFace(Typeface font) {
+		text.setTypeface(font);
+	}
+	
+	public void setTextStyle(int styleID) {
+		text.setTextAppearance(getContext(), styleID);
+	}
+	
+	public void setIcon(int drawableID) {
+		if (drawableID > 0) {
+        	icon.setImageResource(drawableID);
+        	icon.setVisibility(View.VISIBLE);
+        }
+        else {
+        	icon.setVisibility(View.GONE);
+        }
 	}
 }
