@@ -32,14 +32,23 @@ A button component is defined in the XML layout file as followed:
 ```xml
 <com.skd.centeredcontentbutton.CenteredContentButton
     android:id="@+id/btn"
-    android:layout_width="fill_parent"     <!-- you can also set size in dp -->
-    android:layout_height="wrap_content"   <!-- you can also set size in dp -->
-    ccb:btnBg="@drawable/..."              <!-- background drawable (or selector) -->
-    ccb:btnIcon="@drawable/..."	           <!-- button icon -->
-    ccb:btnText="@string/..."              <!-- button text -->
-    ccb:btnTextStyle="@style/..."          <!-- button text style -->
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    ccb:btnBg="@drawable/..."
+    ccb:btnIcon="@drawable/..."
+    ccb:btnText="@string/..."
+    ccb:btnTextStyle="@style/..."
 />
 ```
+
+* android:layout_width  - you can also set size in dp
+* android:layout_height - you can also set size in dp
+* ccb:btnBg             - background drawable (or selector)
+* ccb:btnIcon           - button icon
+* ccb:btnText           - button text
+* ccb:btnTextStyle      - button text style
+
+
 
 A group of toggle buttons is defined in the XML layout file as followed:
 
@@ -55,8 +64,8 @@ A group of toggle buttons is defined in the XML layout file as followed:
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
-        ccb:btnBg="@drawable/..."          <!-- background selector -->
-        ccb:btnChecked="true"              <!-- set button to "checked" state -->
+        ccb:btnBg="@drawable/..."
+        ccb:btnChecked="true"
         ccb:btnIcon="@drawable/..."
         ccb:btnText="@string/..."
         ccb:btnTextStyle="@style/..." />
@@ -73,6 +82,9 @@ A group of toggle buttons is defined in the XML layout file as followed:
 </com.skd.centeredcontentbutton.CenteredContentToggleGroup>
 ```
 
+* ccb:btnBg      - background selector
+* ccb:btnChecked - set button to "checked" state
+        
 In order to use components attributes add a namespace definition to the root layout in your XML layout file:
 
 ```xml
