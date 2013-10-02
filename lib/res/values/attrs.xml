@@ -3,7 +3,8 @@
 
     <declare-styleable name="BtnOptions">
         <attr name="btnBg" format="integer" />
-        <attr name="btnIcon" format="integer" />
+        <attr name="btnIconLeft" format="integer" />
+        <attr name="btnIconRight" format="integer" />
         <attr name="btnText" format="string" />
         <attr name="btnTextStyle" format="integer" />
         <attr name="btnChecked" format="boolean" />
