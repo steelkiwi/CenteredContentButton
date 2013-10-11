@@ -4,8 +4,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal|center_vertical"
-    android:paddingBottom="8dp"
     android:orientation="horizontal"
+    android:paddingBottom="8dp"
     android:paddingLeft="8dp"
     android:paddingRight="8dp"
     android:paddingTop="8dp" >
@@ -15,8 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="8dp"
-        android:contentDescription="@string/icon"
-         />
+        android:contentDescription="@string/icon" />
 
     <TextView
         android:id="@+id/btnText"
@@ -29,7 +28,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:contentDescription="@string/icon"
-         />
-    
+        android:contentDescription="@string/icon" />
+
 </LinearLayout>

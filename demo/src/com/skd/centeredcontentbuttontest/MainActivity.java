@@ -30,6 +30,14 @@ public class MainActivity extends Activity {
 				Toast.makeText(getApplicationContext(), btn2.getText(), Toast.LENGTH_SHORT).show();
 			}
 		});
+		
+		final CenteredContentButton btn3 = (CenteredContentButton) findViewById(R.id.btn3);
+		btn3.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(getApplicationContext(), btn3.getText(), Toast.LENGTH_SHORT).show();
+			}
+		});
 	}
 
 }

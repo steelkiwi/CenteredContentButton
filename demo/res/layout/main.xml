@@ -21,8 +21,19 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
         ccb:btnBg="@drawable/layout_red_bg"
-        ccb:btnIcon="@drawable/ic_add"
+        ccb:btnIconLeft="@drawable/ic_add"
         ccb:btnText="Test 2"
+        ccb:btnTextStyle="@style/btnTextStyle" />
+
+    <com.skd.centeredcontentbutton.CenteredContentButton
+        android:id="@+id/btn3"
+        android:layout_width="100dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        ccb:btnBg="@drawable/layout_red_bg"
+        ccb:btnIconRight="@drawable/ic_add"
+        ccb:btnText="Test 3"
         ccb:btnTextStyle="@style/btnTextStyle" />
 
 </LinearLayout>

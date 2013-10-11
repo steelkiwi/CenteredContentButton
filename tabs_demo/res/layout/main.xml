@@ -20,7 +20,7 @@
             android:layout_weight="0.5"
             ccb:btnBg="@drawable/tabs"
             ccb:btnChecked="true"
-            ccb:btnIcon="@drawable/ic_add"
+            ccb:btnIconLeft="@drawable/ic_add"
             ccb:btnText="Test 1"
             ccb:btnTextStyle="@style/btnTextStyle" />
 
@@ -30,7 +30,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             ccb:btnBg="@drawable/tabs"
-            ccb:btnIcon="@drawable/ic_add"
+            ccb:btnIconRight="@drawable/ic_add"
             ccb:btnText="Test 2"
             ccb:btnTextStyle="@style/btnTextStyle" />
     </com.skd.centeredcontentbutton.CenteredContentToggleGroup>
