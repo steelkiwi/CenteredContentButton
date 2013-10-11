@@ -33,9 +33,10 @@ import android.widget.TextView;
  */
 
 public class CenteredContentButton extends RelativeLayout {
-	private ImageView icon;
+	private ImageView iconLeft;
+	private ImageView iconRight;
 	private TextView text;
-	
+
 	public CenteredContentButton(Context context) {
 		super(context);
 		init(context, null);
@@ -53,62 +54,77 @@ public class CenteredContentButton extends RelativeLayout {
 
 	private void init(Context context, AttributeSet attrs) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.btn_layout, this);
-        
-        setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
-        
-        icon = (ImageView) findViewById(R.id.btnIcon);
-        text = (TextView)  findViewById(R.id.btnText);
-        
-        if (attrs == null) { return; }
-        
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.BtnOptions);
-        int btnBg = a.getResourceId(R.styleable.BtnOptions_btnBg, 0);
-        int btnIcon = a.getResourceId(R.styleable.BtnOptions_btnIcon, 0);
-        String btnText = a.getString(R.styleable.BtnOptions_btnText);
-        int btnTextStyle = a.getResourceId(R.styleable.BtnOptions_btnTextStyle, 0);
-        a.recycle();
-        
-        if (btnBg > 0) {
-        	this.setBackgroundResource(btnBg);
-        }
-        
-        if (btnIcon > 0) {
-        	icon.setImageResource(btnIcon);
-        }
-        else {
-        	icon.setVisibility(View.GONE);
-        }
-        
-        text.setText(btnText);
-        if (btnTextStyle > 0) {
-        	text.setTextAppearance(getContext(), btnTextStyle);
-        }
+		inflater.inflate(R.layout.btn_layout, this);
+
+		setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+
+		iconLeft = (ImageView) findViewById(R.id.btnIconLeft);
+		iconRight = (ImageView) findViewById(R.id.btnIconRight);
+		text = (TextView) findViewById(R.id.btnText);
+
+		if (attrs == null) {
+			return;
+		}
+
+		TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.BtnOptions);
+		int btnBg = a.getResourceId(R.styleable.BtnOptions_btnBg, 0);
+		int btnIconLeft = a.getResourceId(R.styleable.BtnOptions_btnIconLeft, 0);
+		int btnIconRight = a.getResourceId(R.styleable.BtnOptions_btnIconRight, 0);
+		String btnText = a.getString(R.styleable.BtnOptions_btnText);
+		int btnTextStyle = a.getResourceId(R.styleable.BtnOptions_btnTextStyle, 0);
+		a.recycle();
+
+		if (btnBg > 0) {
+			this.setBackgroundResource(btnBg);
+		}
+
+		if (btnIconLeft > 0) {
+			iconLeft.setImageResource(btnIconLeft);
+			iconLeft.setVisibility(View.VISIBLE);
+		}
+		if (btnIconRight > 0) {
+			iconRight.setImageResource(btnIconRight);
+			iconRight.setVisibility(View.VISIBLE);
+		}
+
+		text.setText(btnText);
+		if (btnTextStyle > 0) {
+			text.setTextAppearance(getContext(), btnTextStyle);
+		}
 	}
-	
+
 	public String getText() {
 		return text.getText().toString();
 	}
-	
+
 	public void setText(String txt) {
 		text.setText(txt);
 	}
-	
+
 	public void setTypeFace(Typeface font) {
 		text.setTypeface(font);
 	}
-	
+
 	public void setTextStyle(int styleID) {
 		text.setTextAppearance(getContext(), styleID);
 	}
-	
-	public void setIcon(int drawableID) {
-		if (drawableID > 0) {
-        	icon.setImageResource(drawableID);
-        	icon.setVisibility(View.VISIBLE);
-        }
-        else {
-        	icon.setVisibility(View.GONE);
-        }
+
+	public void setLeftIcon(int drawableId) {
+		if (drawableId > 0) {
+			iconLeft.setImageResource(drawableId);
+			iconLeft.setVisibility(View.VISIBLE);
+		} else {
+			iconLeft.setVisibility(View.GONE);
+		}
 	}
+
+	public void setRightIcon(int drawableId) {
+		if (drawableId > 0) {
+			iconRight.setImageResource(drawableId);
+			iconRight.setVisibility(View.VISIBLE);
+		} else {
+			iconRight.setVisibility(View.GONE);
+		}
+	}
+
 }
