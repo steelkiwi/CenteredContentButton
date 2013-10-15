@@ -82,14 +82,25 @@ public class CenteredContentButton extends RelativeLayout {
 			iconLeft.setImageResource(btnIconLeft);
 			iconLeft.setVisibility(View.VISIBLE);
 		}
+		else {
+			iconLeft.setVisibility(View.GONE);
+		}
+		
 		if (btnIconRight > 0) {
 			iconRight.setImageResource(btnIconRight);
 			iconRight.setVisibility(View.VISIBLE);
+		}
+		else {
+			iconRight.setVisibility(View.GONE);
 		}
 
 		text.setText(btnText);
 		if (btnTextStyle > 0) {
 			text.setTextAppearance(getContext(), btnTextStyle);
+			text.setVisibility(View.VISIBLE);
+		}
+		else {
+			text.setVisibility(View.GONE);
 		}
 	}
 
@@ -113,7 +124,8 @@ public class CenteredContentButton extends RelativeLayout {
 		if (drawableId > 0) {
 			iconLeft.setImageResource(drawableId);
 			iconLeft.setVisibility(View.VISIBLE);
-		} else {
+		}
+		else {
 			iconLeft.setVisibility(View.GONE);
 		}
 	}
@@ -122,7 +134,8 @@ public class CenteredContentButton extends RelativeLayout {
 		if (drawableId > 0) {
 			iconRight.setImageResource(drawableId);
 			iconRight.setVisibility(View.VISIBLE);
-		} else {
+		}
+		else {
 			iconRight.setVisibility(View.GONE);
 		}
 	}
